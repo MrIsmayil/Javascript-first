@@ -1,0 +1,19 @@
+cmd
+cd - papka
+dir - papkanin ichi
+git clone - saytdaki proektin ssilkasi
+git status - statusa baxmaq (lokal kompyuterde edilen deyishiklikleri gormek uchun) (deyishiklikler qirmizi 
+rengde gosterilir)
+git add - statusda gosterilen deyishiklikleri elave etmek uchun //deyishikikler yashil rengde olur
+git add -A - butun deyishiklikleri elave edir //deyishikkikler yashil rengde olur
+git commit -m "Add - elave edilecek faylin adi -" //fayl elave edilmeye hazir veziyyete getirilir
+git commit -m "Made some changes" - butun deyishiklikleri elave etmek uchun
+git push - elave etme prosesine start verir (bu prosesde ilk defe username ve parol sorushulur) /usernane ya email ya MrIsmayil parol nazarov2018/
+
+git pull - diger kompyutere yenilikleri yuklemek uchun
+git - butun komandalari gormek uchun
+
+
+//git commit - ardinca hech ne yazmadan enteri bassaq cmd tesirsiz hala gelir proses donmush kimi olur
+  bu veziyyetden chixmaq uchun /esc/ basiriq sonra /:wq/yaziriq. Bu vasite ile donmush prosesden evvelki prosese 
+  qayitmaq olur.

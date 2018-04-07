@@ -1,0 +1,116 @@
+
+Методы строк:
+
+var txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";;
+
+txt.length; возврашает длину строки
+
+
+var str = "Please locate where 'locate' occurs!";
+var pos = str.indexOf("locate");
+
+indexOf() - метод возвращает индекс (положение) на первом вхождения указанного текста в строке:
+lastIndexOf () метод возвращает индекс последнего вхождения указанного текста в строке:
+
+И indexOf (), и lastIndexOf () возвращают -1, если текст не найден.
+
+search() метод ищет строку для заданного значения и возвращает позицию совпадения
+
+var str = "Please locate where 'locate' occurs!";
+var pos = str.search("locate");
+
+Методы search () и indexOf () НЕ равны. Эти различия:
+
+Метод search () не может занять второе начало позиции аргумента.
+Метод indexOf () не может принимать мощные значения поиска (регулярные выражения).
+
+Есть 3 способа извлечения части строки:
+
+slice (start, end)
+
+var str = "Apple, Banana, Kiwi";
+var res = str.slice(7, 13);
+Banana
+
+Если параметр имеет отрицательное значение, то позиция отсчитывается с конца строки.
+Если опустить второй параметр, то метод нарежет остальную часть строки.
+
+substring(start, end)
+
+substring () похожа на slice ().
+
+Разница заключается в том, что substring () не может принимать отрицательные индексы.
+
+var str = "Apple, Banana, Kiwi";
+var res = str.substring(7, 13);
+Banana
+
+Если опустить второй параметр, substring () будет порезать остальную часть строки.
+
+
+substr(start, length)
+
+substr () похож на slice ().
+
+Разница заключается в том, что второй параметр определяет длину извлеченной части.
+
+var str = "Apple, Banana, Kiwi";
+var res = str.substr(7, 6);
+Banana
+
+replace () метод заменяет заданное значение с другим значением в строке:
+
+str = "Please visit Microsoft!";
+var n = str.replace("Microsoft", "W3Schools");
+
+По умолчанию, replace () функция заменяет только первую совпадению.
+Для того, чтобы заменить все совпадении, использовать регулярное выражение с /g флага (глобальный матч).
+
+По умолчанию, replace () чувствителен к регистру. Запись MICROSOFT (с прописной) не будет работать:
+
+str = "Please visit Microsoft!";
+var n = str.replace("MICROSOFT", "W3Schools");
+
+Для замены без учета регистра, использовать регулярное выражение с /i флагом ( без учета регистра).
+
+Строка преобразуется в верхний регистр с toUpperCase ()
+Строка преобразуется в нижний регистр с toLowerCase () 
+concat () соединяет две или более строк:
+
+var text1 = "Hello";
+var text2 = "World";
+var text3 = text1.concat(" ", text2);
+
+или
+
+var text3 = text1.concat(" ", text2);
+
+concat () метод может быть использован вместо оператора плюс. Эти две линии делают то же самое:
+
+var text = "Hello" + " " + "World!";
+var text = "Hello".concat(" ", "World!");
+
+Есть 2 безопасные методы для извлечения строк символов:
+
+charAt(position)
+charCodeAt(position)
+
+charat() метод возвращает символ по указанному индексу (позиции) в строке:
+
+var str = "HELLO WORLD";
+str.charAt(0);            // returns H
+
+CharCodeAt () метод возвращает Юникод символа по указанному индексу в строке:
+
+var str = "HELLO WORLD";
+
+str.charCodeAt(0);         // returns 72
+
+Строка может быть преобразована в массив с split() методом:
+
+var txt = "a,b,c,d,e";   // String
+txt.split(",");          // Split on commas
+txt.split(" ");          // Split on spaces
+txt.split("|");          // Split on pipe
+
+Для полной ссылки, перейти на https://www.w3schools.com/jsref/jsref_obj_string.asp

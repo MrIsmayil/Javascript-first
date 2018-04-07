@@ -1,0 +1,42 @@
+»з сайта https://www.w3schools.com/js/js_output.asp
+
+document.getElementById - Ќаходит елемента HTML по его ID
+document.write () - выводит строку пр€мо в содержимом HTML (между скобками пишетс€ строка
+                    который должно выводитс€)
+
+window.alert () - (или просто alert) выводит окно предупреждени€ (между скобками пишетс€
+                   строка который будет отображено в окне)
+console.log - добавл€ет запись в консоле браузера
+
+.innerHTML - добавл€ет HTML содержимое.
+
+(можно пр€миком обрашатьс€ на атрибут и его изменить: .src = "" или .style.fontSize = ""
+
+var - объ€вл€ет переменные
+
+функци€ Date() - показывает текушую врем€  /бывает еще так: onclick="displayDate()"/
+
+некоторые событи€:
+
+onchange - HTML элемент был изменен
+onclick - ѕользователь нажимает на элемент HTML
+onmouseover - ѕользователь перемещает указатель мыши на элемент HTML
+onmouseout - ѕользователь перемещает курсор мыши в стороне от HTML элемента
+onkeydown - ѕользователь нажимает клавишу клавиатуры
+onload - Ѕраузер загрузит страницу
+
+более подробный список - https://www.w3schools.com/jsref/dom_obj_event.asp
+
+\"
+\'
+\\
+\b - Backspace
+\f - Form Feed
+\n - New Line
+\r - Carriage Return
+\t - Horizontal Tabulator
+\v - Vertical Tabulator
+
+var x = "John"; об€вл€ем новую переменную и присваиваем на него строку "John"
+var y = new String ("John"); строку определ€ем как обьект
+
