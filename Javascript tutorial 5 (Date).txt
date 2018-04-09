@@ -1,142 +1,442 @@
+var d = new Date();
+document.getElementById("demo").innerHTML = d;
 
-JS Math
+Есть 4 способа инициирования даты:
 
-Объект JavaScript Math позволяет выполнять математические задачи по номерам.
+new Date()
+new Date(milliseconds)
+new Date(dateString)
+new Date(year, month, day, hours, minutes, seconds, milliseconds)
 
-пример
-Math.PI;            // returns 3.141592653589793
-
-
-Math.round ()
-Math.round (х) возвращает значение х, округленное до ближайшего целого числа его:
-
-пример
-Math.round(4.7);    // returns 5
-Math.round(4.4);    // returns 4
-
-
-Math.pow ()
-Math.pow (х, у) возвращает значение х в степени у:
+Использование новой даты ( строка даты ), создает новый объект даты с указанной даты и времени :
 
 пример
-Math.pow(8, 2);      // returns 64
+<script>
+var d = new Date("October 13, 2014 11:13:00");
+document.getElementById("demo").innerHTML = d;
+</script>
 
 
-Math.sqrt ()
-Math.sqrt (х) возвращает квадратный корень из x:
+Используя новый Date ( число ), создает новый объект даты , как нулевое время плюс число .
 
-пример
-Math.sqrt(64);      // returns 8
+Нулевое время 1 января 1970 00:00:00 UTC. Номер указывается в миллисекундах.
 
-
-Math.abs ()
-Math.abs (х) возвращает абсолютное (положительное) значение х:
-
-пример
-Math.abs(-4.7);     // returns 4.7
-
-
-Math.ceil ()
-Math.ceil (х) возвращает значение х округляется до его ближайшего целого числа:
+100000000000 миллисекунды с 1 января 1970 года, приблизительно 3 марта 1973:
 
 пример
-Math.ceil(4.4);     // returns 5
+<script>
+var d = new Date(100000000000);
+document.getElementById("demo").innerHTML = d;  //return Sat Mar 03 1973 12:46:40 GMT+0300 (RTZ 2 (зима))
+</script>
 
 
-Math.floor ()
-Math.floor (х) возвращает значение х округляется вниз до ближайшего целого числа его:
+Использование новой даты ( 7 номеров ), создает новый объект даты с указанной датой и временем :
 
-пример
-Math.floor(4.7);    // returns 4
-
-
-Math.sin ()
-Math.sin (х) возвращает синус (значение от -1 до 1) от угла х (заданный в радианах).
-
-Если вы хотите использовать градусы вместо радианов, вы должны преобразовать градусы в радианы:
-
-Угол в радианах = Угол в градусах х ПИ / 180.
+В 7 номеров указать год, месяц, день, час, минута, секунда, и миллисекунду, в таком порядке:
 
 пример
-Math.sin(90 * Math.PI / 180);     // returns 1 (the sine of 90 degrees)
+<script>
+var d = new Date(99, 5, 24, 11, 33, 30, 0);
+document.getElementById("demo").innerHTML = d;  //return Thu Jun 24 1999 11:33:30 GMT+0300 (RTZ 2 (зима))
+</script>
 
 
-Math.cos ()
-Math.cos (х) возвращает косинус (значение от -1 до 1) от угла х (заданный в радианах).
-
-Если вы хотите использовать градусы вместо радианов, вы должны преобразовать градусы в радианы:
-
-Угол в радианах = Угол в градусах х ПИ / 180.
+Варианты приведенного выше примера давайте опустим любой из последних 4-х параметров:
 
 пример
-Math.cos(0 * Math.PI / 180);     // returns 1 (the cos of 0 degrees)
+<script>
+var d = new Date(99, 5, 24);
+document.getElementById("demo").innerHTML = d;  //return Thu Jun 24 1999 00:00:00 GMT+0300 (RTZ 2 (зима))
+</script>
+JavaScript имеет значение от 0 месяцев до 11. Январь составляет 0. Декабрь составляет 11.
 
 
-Math.min () и Math.max ()
-Math.min () и Math.max () можно использовать, чтобы найти самое низкое или наибольшее значение в списке аргументов:
+<p id="demo"></p>
 
-пример
-Math.min(0, 150, 30, 20, -8, -200);  // returns -200
-Math.max(0, 150, 30, 20, -8, -200);  // returns 150
+<script>
+d = new Date();
+document.getElementById("demo").innerHTML = d;
+</script>
 
+<p id="demo"></p>
 
-Math.random ()
-Math.random () возвращает случайное число в диапазоне от 0 (включительно) и 1 (не включается):
+<script>
+d = new Date();
+document.getElementById("demo").innerHTML = d.toString();
+</script>
 
-пример
-Math.random();     // returns a random number
-
-Math.random () используется с Math.floor () может быть использован для получения случайных чисел.
-
-пример
-Math.floor(Math.random() * 10);     // returns a number between 0 and 9
-Math.floor(Math.random() * 11);      // returns a number between 0 and 10
-Math.floor(Math.random() * 100);     // returns a number between 0 and 99
-Math.floor(Math.random() * 101);     // returns a number between 0 and 100
-Math.floor(Math.random() * 10) + 1;  // returns a number between 1 and 10
-Math.floor(Math.random() * 100) + 1; // returns a number between 1 and 100
+одни и те же
 
 
-Математические свойства (Константы)
-JavaScript предоставляет 8 математических констант, которые могут быть доступны с объектом Math:
+ToUTCString () метод преобразует дату в строку UTC (стандартный дисплей даты).
 
 пример
-Math.E        // returns Euler's number
-Math.PI       // returns PI
-Math.SQRT2    // returns the square root of 2
-Math.SQRT1_2  // returns the square root of 1/2
-Math.LN2      // returns the natural logarithm of 2
-Math.LN10     // returns the natural logarithm of 10
-Math.LOG2E    // returns base 2 logarithm of E
-Math.LOG10E   // returns base 10 logarithm of E
+<script>
+var d = new Date();
+document.getElementById("demo").innerHTML = d.toUTCString();
+</script>
 
 
-Математический конструктор
-В отличие от других глобальных объектов, объект Math не имеет конструктора. Методы и свойства являются статическими.
+ToDateString () метод преобразует дату в более читаемом формате:
 
-Все методы и свойства (константы) могут быть использованы без создания объекта Math в первую очередь.
+пример
+<script>
+var d = new Date();
+document.getElementById("demo").innerHTML = d.toDateString();
+</script>
 
-Методы Math объектов
+
+Есть правило, 4 типа JavaScript дата входных форматов:
+
+Тип	пример
+ISO Дата	«2015-03-25» (Международный стандарт)
+Короткая Дата	"03/25/2015"
+Длинная Дата	"25 марта 2015" или "25 марта 2015"
+Полная Дата	«Среда 25 марта 2015»
+
+
+Даты ISO могут быть записаны с добавлением часов, минут и секунд (ГГГГ-ММ-ДДTчч: ММ: SSZ):
+
+пример
+var d = new Date("2015-03-25T12:00:00Z");
+
+
+Дата и время отделено с большой буквы
+
+UTC время определяется с заглавной буквой Z.
+
+Если вы хотите изменить время относительно UTC, удалить Z и добавить + HH: MM или -hh: ММ вместо:
+
+пример
+var d = new Date("2015-03-25T12:00:00-06:30");
+
+
+JavaScript Короткие даты.
+Короткие сроки написаны с «MM / DD / YYYY» синтаксис, как это:
+
+пример
+var d = new Date("03/25/2015");
+
+В некоторых браузерах, месяцы или дни без ведущих нулей могут привести к ошибке:
+
+var d = new Date("2015-3-25");
+
+Поведение "YYYY / MM / DD" не определено. 
+Некоторые браузеры будут пытаться угадать формат. Некоторые из них будут возвращаться NaN.
+
+var d = new Date("2015/03/25");
+Поведение «DD-MM-YYYY» также не определено. 
+Некоторые браузеры будут пытаться угадать формат. Некоторые из них будут возвращаться NaN.
+
+var d = new Date("25-03-2015");
+
+
+JavaScript Длинные даты.
+Длинные сроки чаще всего написаны с «МММ DD YYYY» синтаксис вроде этого:
+
+пример
+var d = new Date("Mar 25 2015");
+
+Месяц и день может быть в любом порядке:
+
+пример
+var d = new Date("25 Mar 2015");
+
+И месяц можно записать в полном объеме (январь), или сокращенно (Jan):
+
+пример
+var d = new Date("January 25 2015");
+var d = new Date("Jan 25 2015");
+
+Запятые игнорируются. Имена чувствительны к регистру:
+
+пример
+var d = new Date("JANUARY, 25, 2015");
+
+
+Дата ввода - Разбор Даты
+Если у вас есть действительная строка даты, вы можете использовать Date.parse () метод , чтобы преобразовать его в миллисекундах.
+
+Date.parse () возвращает количество миллисекунд между датой и 1 января 1970 года:
+
+пример
+var msec = Date.parse("March 21, 2012");
+document.getElementById("demo").innerHTML = msec;
+
+Затем вы можете использовать несколько миллисекунд , чтобы преобразовать его в дату объекта:
+
+пример
+var msec = Date.parse("March 21, 2012");
+var d = new Date(msec);
+document.getElementById("demo").innerHTML = d;  
+
+returned Date.parse(string) returns milliseconds.
+
+You can use the return value to convert the string to a date object:
+
+Wed Mar 21 2012 00:00:00 GMT+0300 (RTZ 2 (зима))
+
+
+
+getDate methods
+
+Method	                Description
+getFullYear()	        Get the year as a four digit number (yyyy)
+getMonth()	        Get the month as a number (0-11)
+getDate()	        Get the day as a number (1-31)
+getHours()	        Get the hour (0-23)
+getMinutes()	        Get the minute (0-59)
+getSeconds()	        Get the second (0-59)
+getMilliseconds()	Get the millisecond (0-999)
+getTime()	        Get the time (milliseconds since January 1, 1970)
+getDay()	        Get the weekday as a number (0-6)
+
+
+GetTime () Метод
+GetTime () метод возвращает число миллисекунд с 1 января 1970 года:
+
+пример
+<script>
+var d = new Date();
+document.getElementById("demo").innerHTML = d.getTime();
+</script>
+
+
+GetFullYear () Метод
+GetFullYear () метод возвращает год даты как четырехзначный номер:
+
+пример
+<script>
+var d = new Date();
+document.getElementById("demo").innerHTML = d.getFullYear();   возврашает текуший год
+</script>
+
+
+GetMonth () Метод
+GetMonth () метод возвращает месяц дату как число (0-11):
+
+пример
+<script>
+var d = new Date();
+document.getElementById("demo").innerHTML = d.getMonth();   возврашает текушую месяц
+</script>
+
+
+Вы можете использовать массив имен, и getMonth () возвращает месяц в качестве имени:
+
+пример
+<script>
+var d = new Date();
+var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+document.getElementById("demo").innerHTML = months[d.getMonth()];
+</script>   возврашает текушую месяц
+
+
+GetDate () Метод
+GetDate () метод возвращает день даты в виде числа (1-31):
+
+пример
+<script>
+var d = new Date();
+document.getElementById("demo").innerHTML = d.getDate();
+</script>
+
+
+В getHours () метод
+В getHours () метод возвращает часы даты как число (0-23):
+
+пример
+<script>
+var d = new Date();
+document.getElementById("demo").innerHTML = d.getHours();
+</script>
+
+
+В getMinutes () метод
+В getMinutes () метод возвращает минуты даты как число (0-59):
+
+пример
+<script>
+var d = new Date();
+document.getElementById("demo").innerHTML = d.getMinutes();
+</script>
+
+
+В getSeconds () метод
+В getSeconds () метод возвращает секунды даты как число (0-59):
+
+пример
+<script>
+var d = new Date();
+document.getElementById("demo").innerHTML = d.getSeconds();
+</script>
+
+
+В getMilliseconds () метод
+В getMilliseconds () метод возвращает миллисекунды дату как число (0-999):
+
+пример
+<script>
+var d = new Date();
+document.getElementById("demo").innerHTML = d.getMilliseconds();
+</script>
+
+
+GetDay () Метод
+GetDay () метод возвращает день недели даты в виде числа (0-6):
+
+пример
+<script>
+var d = new Date();
+document.getElementById("demo").innerHTML = d.getDay();
+</script>
+
+В JavaScript, в первый день недели (0) означает «воскресенье», даже если некоторые страны мира считают первый день недели, чтобы быть «Понедельник»
+
+Вы можете использовать массив имен, и getDay () возвращает день недели в качестве имени:
+
+пример
+<script>
+var d = new Date();
+var days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+document.getElementById("demo").innerHTML = days[d.getDay()];
+</script>   возврашает текушую дню недели
+
+
+Методы UTC Дата
+современные методы UTC используются для работы с датами UTC (Universal Time даты Zone):
+
 Method	Description
-abs(x)	Returns the absolute value of x
-acos(x)	Returns the arccosine of x, in radians
-asin(x)	Returns the arcsine of x, in radians
-atan(x)	Returns the arctangent of x as a numeric value between -PI/2 and PI/2 radians
-atan2(y, x)	Returns the arctangent of the quotient of its arguments
-ceil(x)	Returns the value of x rounded up to its nearest integer
-cos(x)	Returns the cosine of x (x is in radians)
-exp(x)	Returns the value of Ex
-floor(x)	Returns the value of x rounded down to its nearest integer
-log(x)	Returns the natural logarithm (base E) of x
-max(x, y, z, ..., n)	Returns the number with the highest value
-min(x, y, z, ..., n)	Returns the number with the lowest value
-pow(x, y)	Returns the value of x to the power of y
-random()	Returns a random number between 0 and 1
-round(x)	Returns the value of x rounded to its nearest integer
-sin(x)	Returns the sine of x (x is in radians)
-sqrt(x)	Returns the square root of x
-tan(x)	Returns the tangent of an angle
+getUTCDate()	Same as getDate(), but returns the UTC date
+getUTCDay()	Same as getDay(), but returns the UTC day
+getUTCFullYear()	Same as getFullYear(), but returns the UTC year
+getUTCHours()	Same as getHours(), but returns the UTC hour
+getUTCMilliseconds()	Same as getMilliseconds(), but returns the UTC milliseconds
+getUTCMinutes()	Same as getMinutes(), but returns the UTC minutes
+getUTCMonth()	Same as getMonth(), but returns the UTC month
+getUTCSeconds()	Same as getSeconds(), but returns the UTC seconds
 
-полный список https://www.w3schools.com/jsref/jsref_obj_math.asp
+полный список https://www.w3schools.com/jsref/jsref_obj_date.asp
 
 
+Set Date Methods
+
+Набор методов Дата
+Набор методы Даты используется для установки части даты:
+
+Method	Description
+setDate()	Set the day as a number (1-31)
+setFullYear()	Set the year (optionally month and day)
+setHours()	Set the hour (0-23)
+setMilliseconds()	Set the milliseconds (0-999)
+setMinutes()	Set the minutes (0-59)
+setMonth()	Set the month (0-11)
+setSeconds()	Set the seconds (0-59)
+setTime()	Set the time (milliseconds since January 1, 1970)
+
+
+
+SetFullYear () Метод
+SetFullYear () метод устанавливает год объекта даты. В этом примере к 2020 году:
+
+пример
+<script>
+var d = new Date();
+d.setFullYear(2020);
+document.getElementById("demo").innerHTML = d;  //показывает текушую дату в 2020 году
+</script>
+
+Метод setFullYear () может при необходимости установить месяц и день:
+
+пример
+<script>
+var d = new Date();
+d.setFullYear(2020, 11, 3);
+document.getElementById("demo").innerHTML = d;
+</script>
+
+
+
+SetMonth () Метод
+SetMonth () метод устанавливает месяц дату объекта (0-11):
+
+пример
+<script>
+var d = new Date();
+d.setMonth(11);
+document.getElementById("demo").innerHTML = d;    //показывает текушую дату и год в декабр месяце
+</script>  
+
+
+SETDATE () Метод
+SETDATE () метод устанавливает день даты объекта (1-31):
+
+пример
+<script>
+var d = new Date();
+d.setDate(20);
+document.getElementById("demo").innerHTML = d;  //показывает текушую месяц и год в 20 числе
+</script>
+
+Метод SETDATE () также может быть использован для добавления дней к дате:
+
+пример
+<script>
+var d = new Date();
+d.setDate(d.getDate() + 50);
+document.getElementById("demo").innerHTML = d;   //добавляет 50 дней текушую дату
+</script>
+
+
+В setHours () метод
+В setHours () метод устанавливает часы дату объекта (0-23):
+
+пример
+<script>
+var d = new Date();
+d.setHours(22);
+document.getElementById("demo").innerHTML = d;  //показывает текушую время с 22 часом
+</script>
+
+
+В setMinutes () метод
+В setMinutes () метод устанавливает протокол дату объекта (0-59):
+
+пример
+<script>
+var d = new Date();
+d.setMinutes(30);
+document.getElementById("demo").innerHTML = d;  //показывает текушую время с 30 минутом
+</script>
+
+
+В setSeconds () метод
+В setSeconds () метод задает секунды даты объекта (0-59):
+
+пример
+<script>
+var d = new Date();
+d.setSeconds(30);
+document.getElementById("demo").innerHTML = d;  //показывает текушую время с 30 секундом
+</script>
+
+
+Сравнить Даты
+Даты можно легко сравнить.
+
+Следующий пример сравнивает сегодняшнюю дату с 14 января 2100 года:
+
+пример
+var today, someday, text;
+today = new Date();
+someday = new Date();
+someday.setFullYear(2100, 0, 14);
+
+if (someday > today) {
+    text = "Today is before January 14, 2100.";
+} else {
+    text = "Today is after January 14, 2100.";
+}
+document.getElementById("demo").innerHTML = text;
+
+полная ссылка  https://www.w3schools.com/jsref/jsref_obj_date.asp
