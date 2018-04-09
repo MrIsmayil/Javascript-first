@@ -18,7 +18,7 @@ git - butun komandalari gormek uchun
   bu veziyyetden chixmaq uchun /esc/ basiriq sonra /:wq/yaziriq. Bu vasite ile donmush prosesden evvelki prosese 
   qayitmaq olur.
 
-git congig -list   - user haqqinda informasiya
+git config --list   - user haqqinda informasiya
 git config   - umumi informasiya ayarlamalar
 
 command promtda qeydiyyat
