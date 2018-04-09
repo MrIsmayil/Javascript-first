@@ -17,3 +17,11 @@ git - butun komandalari gormek uchun
 //git commit - ardinca hech ne yazmadan enteri bassaq cmd tesirsiz hala gelir proses donmush kimi olur
   bu veziyyetden chixmaq uchun /esc/ basiriq sonra /:wq/yaziriq. Bu vasite ile donmush prosesden evvelki prosese 
   qayitmaq olur.
+
+git congig -list   - user haqqinda informasiya
+git config   - umumi informasiya ayarlamalar
+
+command promtda qeydiyyat
+
+git config user.name "" - git hub saytindaki user adimizi daxil edirik
+git config user.email "" - git hub saytindaki emaili daxil edirik
